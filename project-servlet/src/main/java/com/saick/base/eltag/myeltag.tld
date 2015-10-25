@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+
+	<tlib-version>1.0</tlib-version>
+	<!-- 相当于自定义的访问函数或属性的前缀 -->
+	<short-name>myeltag</short-name>
+	<!-- 相当于自定义的名称空间 -->
+	<uri>http://www.com.saick.eltaglib</uri>
+
+	<!-- if-else 标签 -->
+	<tag>
+		<name>myChoose</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag8Choose</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	<tag>
+		<name>myElse</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag8Else</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	<tag>
+		<name>myIf</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag8If</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<!-- if标签 -->
+	<tag>
+		<name>myIf</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag7</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flag</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<!-- 转换为大写字母 -->
+	<tag>
+		<name>myToUpperCase</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag6</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	<!-- 循环显示count次 -->
+	<tag>
+		<name>myForEach</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag5</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>count</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<!-- 标签后的内容不显示 -->
+	<tag>
+		<name>mySkipException</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag4</tag-class>
+		<body-content>empty</body-content>
+	</tag>
+	<!-- 将标签后的内容不显示 -->
+	<tag>
+		<name>myAfterNull</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag3</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	<!-- 将标签内的内容不显示 -->
+	<tag>
+		<name>myPrintNull</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag2</tag-class>
+		<body-content>scriptless</body-content>
+	</tag>
+	<!--输出指定内容到该标签内-->
+	<tag>
+		<name>printMyWord</name>
+		<tag-class>com.saick.base.eltag.ELSimpleTag1</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>displayStr</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- 自定义标签的tld文件模版 ：未实现 TODO -->
+	<tag>
+		<description>Outputs a colored tile</description>
+		<name>tile</name>
+		<tag-class>jsp2.examples.simpletag.TileSimpleTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>color</name>
+			<required>true</required>
+		</attribute>
+		<attribute>
+			<name>label</name>
+			<required>true</required>
+		</attribute>
+	</tag>
+	<tag>
+		<description> Tag that echoes all its attributes and body content</description>
+		<name>echoAttributes</name>
+		<tag-class>jsp2.examples.simpletag.EchoAttributesTag</tag-class>
+		<body-content>empty</body-content>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag> 
+
+
+	<!-- 定义调用的静态函数声明位置 -->
+	<function>
+		<description>Converts the string to all caps</description>
+		<name>toUpper</name>
+		<function-class>com.saick.base.eltag.StaticELSimpleTag</function-class>
+		<!-- 函数签名 -->
+		<function-signature>java.lang.String toUpper( java.lang.String )</function-signature>
+	</function>
+	
+</taglib>
+
